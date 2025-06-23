@@ -1,0 +1,1758 @@
+/* Удаляем ограничения для мобильной версии */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Восстанавливаем скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+  display: block;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 122, 194, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 122, 194, 0.7);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: url('/fon.png') center/cover no-repeat fixed !important;
+  background-color: #fff;
+  animation: gradientShift 12s ease infinite;
+  color: #ffffff;
+  min-height: 100vh;
+  font-size: 18px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* Улучшенные медиа-запросы для мобильной оптимизации */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    background: #f8f9fa; /* Light gray background for mobile */
+    color: #333; /* Dark text color for mobile */
+    animation: none;
+  }
+
+  .services-section, .masters-section, .about-section, .reviews-section,
+  .price-list-section, .advantages-section, .partners-section, .contact-form-section {
+    background: #ffffff; /* White background for sections on mobile */
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08);
+    color: #333; /* Dark text for sections on mobile */
+    border: 1px solid #e9ecef;
+    backdrop-filter: none;
+  }
+
+  .services-section h2, .masters-section h2, .reviews-section h2, .about-section h2,
+  .price-list-container h2, .advantages-container h2, .partners-container h2, .contact-form-container h2 {
+    color: #333; /* Dark headings on mobile */
+    text-shadow: none; /* Remove text shadow on mobile */
+  }
+
+  .hero-section {
+    padding: 20px 10px !important;
+    min-height: 60vh !important;
+  }
+
+  h1 {
+    font-size: 1.8em !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.3em !important;
+    line-height: 1.3 !important;
+  }
+
+  p {
+    font-size: 1em !important;
+    line-height: 1.4 !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: block !important;
+  }
+
+  .button {
+    padding: 10px 20px !important;
+    font-size: 0.9em !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  /* Оптимизация для карточек услуг */
+  .service-card {
+    min-height: 240px !important;
+    padding: 16px 12px !important;
+  }
+
+  .service-icon {
+    margin-bottom: 12px !important;
+    padding: 10px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .service-title {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-description {
+    font-size: 0.8rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .service-order-btn {
+    width: 100% !important;
+    min-width: 100px !important;
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Оптимизация для модальных окон */
+  .modal-content {
+    width: 95% !important;
+    max-width: none !important;
+    margin: 10px !important;
+    padding: 20px 15px !important;
+  }
+
+  .modal-header {
+    padding: 15px 0 !important;
+  }
+
+  .modal-body {
+    padding: 15px 0 !important;
+  }
+
+  /* Оптимизация для форм */
+  .form-group {
+    margin-bottom: 15px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 15px !important;
+    font-size: 16px !important; /* Предотвращает зум на iOS */
+  }
+
+  /* Оптимизация для кнопок */
+  .btn {
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    min-height: 44px !important; /* Минимальная высота для touch */
+  }
+
+  /* Оптимизация для навигации */
+  .header {
+    padding: 6px 0 !important;
+  }
+
+  .logo {
+    height: 32px !important;
+  }
+
+  /* Оптимизация для корзины */
+  .cart-panel {
+    width: 95% !important;
+    max-width: none !important;
+  }
+
+  /* Улучшение touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Оптимизация для изображений */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero-section {
+    padding: 15px 8px !important;
+    min-height: 50vh !important;
+  }
+
+  h1 {
+    font-size: 1.5em !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.3em !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.1em !important;
+    line-height: 1.3 !important;
+  }
+
+  .logo img {
+    max-width: 140px !important;
+  }
+
+  .button {
+    padding: 8px 16px !important;
+    font-size: 0.85em !important;
+    width: 100% !important;
+    max-width: 260px !important;
+  }
+
+  /* Дополнительная оптимизация для маленьких экранов */
+  .service-card {
+    min-height: 220px !important;
+    padding: 12px 10px !important;
+  }
+
+  .service-icon {
+    margin-bottom: 10px !important;
+    padding: 8px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .service-title {
+    font-size: 0.9rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-description {
+    font-size: 0.75rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-order-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Оптимизация для модальных окон на маленьких экранах */
+  .modal-content {
+    width: 98% !important;
+    margin: 5px !important;
+    padding: 15px 12px !important;
+  }
+
+  .modal-header {
+    padding: 12px 0 !important;
+  }
+
+  .modal-body {
+    padding: 12px 0 !important;
+  }
+
+  /* Оптимизация для форм на маленьких экранах */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px !important;
+    font-size: 16px !important;
+  }
+
+  /* Оптимизация для кнопок на маленьких экранах */
+  .btn {
+    padding: 10px 16px !important;
+    font-size: 16px !important;
+    min-height: 44px !important;
+  }
+}
+
+/* Отключаем все мобильные медиа-запросы */
+@media (max-width: 1024px) {
+  /* Пустой блок для отключения планшетных стилей */  
+}
+
+/* Дополнительные стили для улучшения производительности на мобильных */
+@media (max-width: 768px) {
+  /* Отключаем сложные анимации на мобильных для улучшения производительности */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Улучшаем скроллинг на мобильных */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Оптимизация для touch устройств */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Улучшение читаемости текста */
+  p, span, div {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Оптимизация для изображений */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Стили для предотвращения зума на input полях в iOS */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Улучшение доступности для мобильных устройств */
+@media (max-width: 768px) {
+  /* Увеличиваем контрастность для лучшей читаемости */
+  .text-light {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* Улучшаем видимость кнопок */
+  .btn, button {
+    border: 2px solid transparent !important;
+  }
+
+  .btn:focus, button:focus {
+    outline: 2px solid #f47ac2 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Улучшаем видимость ссылок */
+  a:focus {
+    outline: 2px solid #f47ac2 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+:root {
+  /* Основная фиолетовая палитра */
+  --primary-purple: #9b59b6;
+  --secondary-purple: #8e44ad;
+  --accent-purple: #a569bd;
+  --light-purple: #bb8fce;
+  --dark-purple: #7d3c98;
+  
+  /* Розовая палитра для Hero */
+  --pink-light: #fde2e7;
+  --pink-medium: #fbb6ce;
+  --pink-bright: #f687b3;
+  --pink-vivid: #ed64a6;
+  --pink-deep: #d53f8c;
+  
+  /* Дополняющие цвета */
+  --accent-gold: #d4af37;
+  --accent-orange: #ff7f50;
+  --accent-blue: #4a90e2;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Анимация градиента */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Анимация розового переливания для Hero */
+@keyframes pinkShimmer {
+  0% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  25% {
+    background-position: 100% 0%;
+    background-size: 300% 300%;
+  }
+  50% {
+    background-position: 100% 100%;
+    background-size: 250% 250%;
+  }
+  75% {
+    background-position: 0% 100%;
+    background-size: 350% 350%;
+  }
+  100% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 110px);
+  padding-bottom: 60px; /* Добавляем отступ снизу */
+}
+
+/* Hero Section с розовым градиентом */
+.hero-section {
+  min-height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, rgba(244,122,194,0.1) 0%, rgba(162,89,198,0.1) 100%);
+  position: relative;
+  z-index: 1;
+  padding: 20px 15px;
+  margin-bottom: 15px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Добавляем эффект свечения для hero-section */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(244,122,194,0.1) 0%, rgba(162,89,198,0.05) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  display: none !important;
+}
+
+/* Общие стили для секций */
+.services-section, .masters-section, .about-section, .reviews-section,
+.price-list-section, .advantages-section, .partners-section, .contact-form-section {
+  max-width: 1200px;
+  margin: 0 auto 15px auto;
+  padding: 20px 25px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 32px rgba(162,89,198,0.15);
+  color: #fff;
+  position: relative;
+  overflow: visible;
+  border: none;
+  backdrop-filter: blur(10px);
+}
+
+/* Заголовки секций */
+.services-section h2, .masters-section h2, .reviews-section h2, .about-section h2,
+.price-list-container h2, .advantages-container h2, .partners-container h2, .contact-form-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Стили для компонента Services */
+.services-section {
+  padding: 40px 15px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.services-section h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 18px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0) 70%);
+  transform: rotate(45deg);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-icon {
+  margin-bottom: 10px;
+  color: var(--primary-purple);
+}
+
+.service-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-purple);
+  margin: 0;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  flex-grow: 1;
+}
+
+.service-order-btn {
+  background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+  margin-top: auto;
+}
+
+.service-order-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4);
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-section {
+    padding: 30px 10px;
+  }
+  .service-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+   .service-card {
+    padding: 25px;
+  }
+  .service-title {
+    font-size: 1.5rem;
+  }
+  .service-description {
+    font-size: 1.1rem;
+  }
+  .service-order-btn {
+    padding: 14px 32px;
+    font-size: 1.2rem;
+  }
+}
+
+.hero-section {
+  color: #fff;
+  padding: 40px 15px; /* Уменьшил вертикальные отступы */
+  text-align: center;
+}
+
+.equipment-circle-card {
+  /* ... existing code ... */
+}
+
+/* --- Equipment Section (modern circles) --- */
+.equipment-section-dark {
+  background: #181818;
+  padding: 40px 0 40px 0;
+  min-height: 80px;
+}
+.equipment-grid-circles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+.equipment-circle-card {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  min-width: 280px;
+  max-width: 350px;
+  min-height: 140px;
+}
+.equipment-img-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.13);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.equipment-img-large {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.equipment-info-panel {
+  background: #111;
+  border-radius: 18px;
+  padding: 18px 24px 14px 24px;
+  margin-left: -30px;
+  min-width: 170px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+.equipment-title-main {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.equipment-model {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.equipment-brand {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 3px 10px 3px 10px;
+  border-radius: 6px;
+  margin-top: 2px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+@media (max-width: 1100px) {
+  .equipment-grid-circles {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+  }
+}
+@media (max-width: 700px) {
+  .equipment-grid-circles {
+    grid-template-columns: 1fr;
+    gap: 32px 0;
+  }
+  .equipment-circle-card {
+    min-width: 0;
+    max-width: 100vw;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .equipment-info-panel {
+    margin-left: 0;
+    margin-top: -30px;
+    min-width: 0;
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+
+.animated-bg {
+  display: none !important;
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: center, 0% 50%;
+  }
+  50% {
+    background-position: center, 100% 50%;
+  }
+  100% {
+    background-position: center, 0% 50%;
+  }
+}
+
+/* --- Contact Form Modern Styles --- */
+.contact-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.form-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-form {
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.09) 100%);
+  border: 2px solid rgba(255,255,255,0.22);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.18);
+  padding: 25px 25px 20px 25px;
+  min-width: 280px;
+  max-width: 350px;
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  font-size: 1.1em;
+  padding: 12px 16px;
+  outline: none;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: border 0.2s, background 0.2s;
+  resize: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border: 2px solid #f47ac2;
+  background: rgba(255,255,255,0.18);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #f47ac2 0%, #a259c6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(244,122,194,0.18);
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-subtitle {
+  color: #fff;
+  font-size: 1.2em;
+  opacity: 0.92;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.form-note {
+  color: #fff;
+  font-size: 1em;
+  opacity: 0.7;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact-info {
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.09) 100%);
+  border: 2px solid rgba(255,255,255,0.22);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.18);
+  padding: 25px 25px 20px 25px;
+  min-width: 280px;
+  max-width: 350px;
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #fff;
+}
+.contact-card h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.13);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.contact-method:hover {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.13);
+}
+.method-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.method-title {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.method-subtitle {
+  font-size: 0.95em;
+  opacity: 0.8;
+}
+.response-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 10px;
+  padding: 10px 16px;
+}
+.guarantee-icon {
+  font-size: 1.6em;
+  color: #f47ac2;
+}
+.guarantee-text strong {
+  font-size: 1.1em;
+  color: #fff;
+}
+.guarantee-text p {
+  font-size: 1em;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+}
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: linear-gradient(135deg, #f47ac2 0%, #a259c6 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.18);
+  padding: 60px 40px;
+  color: #fff;
+  margin: 0 auto;
+  max-width: 420px;
+}
+.success-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+@media (max-width: 900px) {
+  .form-layout {
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .contact-form, .contact-info {
+    min-width: 0;
+    max-width: 100vw;
+    width: 100%;
+    padding: 28px 10px 18px 10px;
+  }
+  .success-message {
+    padding: 40px 10px;
+    max-width: 100vw;
+  }
+}
+
+/* DatePicker Styles (минимальные правки для корректной работы) */
+.date-picker-wrapper {
+  width: 100%;
+}
+
+.date-picker-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  font-size: 1.08em;
+  padding: 12px 16px;
+  outline: none;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: border 0.2s, background 0.2s;
+}
+
+.date-picker-input:focus {
+  border: 2px solid #f47ac2;
+  background: rgba(255,255,255,0.18);
+}
+
+.date-picker-popper,
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+.react-datepicker {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #1a1a1a !important;
+  border: 2px solid rgba(255,255,255,0.22) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+  width: 400px !important;
+  font-size: 1.08em !important;
+}
+
+.react-datepicker__header {
+  background: #2a2a2a !important;
+  border-bottom: 1.5px solid rgba(255,255,255,0.13) !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  font-size: 1em !important;
+  padding-top: 10px !important;
+  padding-bottom: 8px !important;
+  min-height: 38px !important;
+}
+
+.react-datepicker__current-month {
+  color: #fff !important;
+  font-size: 1.15em !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 2px !important;
+  letter-spacing: 0.04em !important;
+  padding-bottom: 2px !important;
+}
+
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__year-read-view--down-arrow {
+  margin-left: 6px !important;
+}
+
+.react-datepicker__day-names {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 2px !important;
+  padding: 0 2px !important;
+}
+
+.react-datepicker__day-name {
+  color: #fff !important;
+  font-size: 0.98em !important;
+  font-weight: 400 !important;
+  width: 2em !important;
+  line-height: 2em !important;
+  text-align: center !important;
+  opacity: 0.85;
+}
+
+.react-datepicker__month {
+  margin: 0 !important;
+  padding: 0 2px 6px 2px !important;
+}
+
+.react-datepicker__day,
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  width: 2em !important;
+  height: 2em !important;
+  line-height: 2em !important;
+  font-size: 1em !important;
+  text-align: center !important;
+  font-weight: 400 !important;
+}
+
+.react-datepicker__day:hover {
+  background: #f47ac2 !important;
+  border-radius: 6px !important;
+}
+
+.react-datepicker__day--selected {
+  background: #f47ac2 !important;
+  border-radius: 6px !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background: #f47ac2 !important;
+  border-radius: 6px !important;
+}
+
+.react-datepicker__time-container {
+  border-left: 2px solid rgba(255,255,255,0.22) !important;
+  width: 120px !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  background: #2a2a2a !important;
+  font-size: 1em !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time-box {
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time-list-item {
+  color: #fff !important;
+  font-size: 1em !important;
+  height: 1.7em !important;
+  line-height: 1.7em !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time-list-item:hover {
+  background: #f47ac2 !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time-list-item--selected {
+  background: #f47ac2 !important;
+}
+
+.react-datepicker__navigation {
+  top: 12px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #fff !important;
+  border-width: 0 4px 4px 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.react-datepicker__navigation:hover *::before {
+  border-color: #f47ac2 !important;
+}
+
+/* Если есть timepicker, делаем шире */
+.react-datepicker--with-time .react-datepicker__triangle,
+.react-datepicker--with-time .react-datepicker__triangle::before {
+  left: 80px !important;
+}
+
+.react-datepicker--with-time {
+  width: 520px !important;
+}
+
+/* Увеличенные поля для выбора даты и времени */
+input[type="date"],
+input[type="time"] {
+  height: 56px;
+  font-size: 1.25em;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: border 0.2s, background 0.2s;
+}
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border: 2px solid #f47ac2;
+  background: rgba(255,255,255,0.18);
+}
+
+/* Увеличить иконки внутри input (браузерные) */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  font-size: 2em;
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  filter: invert(1) brightness(1.2);
+}
+
+input[type="date"]::-ms-input-placeholder,
+input[type="time"]::-ms-input-placeholder {
+  font-size: 1.1em;
+}
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+  font-size: 1.1em;
+}
+
+/* Стилизация выпадающего списка услуг */
+select, select:focus {
+  background: #fff !important;
+  color: #222 !important;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.22);
+  font-size: 1.1em;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: border 0.2s, background 0.2s;
+}
+
+select option {
+  background: #fff !important;
+  color: #222 !important;
+  font-size: 1.1em;
+  padding: 12px 16px;
+}
+
+select option:checked, select option:focus, select option:hover {
+  background: #f47ac2 !important;
+  color: #fff !important;
+}
+
+/* Price List Styles */
+.price-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.price-category {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.price-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-info h4 {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.price-info p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 3px 0 0;
+}
+
+.price-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Portfolio Styles */
+.portfolio-section {
+  padding: 40px 15px;
+}
+
+.portfolio-categories {
+  display: grid;
+  gap: 30px;
+}
+
+.portfolio-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+  opacity: 1;
+}
+
+.portfolio-item-overlay span {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Contacts Styles */
+.contacts-section {
+  padding: 40px 15px;
+}
+
+.contacts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: grid;
+  gap: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-item svg {
+  font-size: 20px;
+  color: #fff;
+}
+
+.contact-item h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.contact-item p {
+  margin: 3px 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero-button {
+  background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+  text-shadow: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-button:hover {
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Скрываем скроллбар для всего документа */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Для IE и Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+:root {
+  --primary-color: #f47ac2;
+  --secondary-color: #a259c6;
+  --text-color: #2d3748;
+  --light-text: #718096;
+  --background-light: #ffffff;
+  --background-dark: #1a1a1a;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Buttons */
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Classes */
+.text-light {
+  font-weight: 300;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-extrabold {
+  font-weight: 800;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Новые плавные анимации */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gentleSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gentlePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(244,122,194,0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(244,122,194,0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(244,122,194,0.3);
+  }
+}
+
+/* Применяем анимации к элементам */
+.hero-logo {
+  animation: fadeInScale 1.5s ease-out forwards;
+}
+
+.hero-title {
+  animation: gentleSlideUp 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.hero-description {
+  animation: gentleSlideUp 1.5s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.hero-button {
+  animation: gentleSlideUp 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-button:hover {
+  /* animation: gentlePulse 2s ease-in-out infinite; */
+}
+
+.gradient-bg {
+  background-size: 200% 200%;
+  animation: softGradient 8s ease infinite;
+}
