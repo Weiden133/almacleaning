@@ -8,7 +8,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
       ? 'Здравствуйте! Хочу заказать химчистку с сайта AlmaCleaning!'
       : 'Здравствуйте с сайта AlmaCleaning! хочу заказать ваши услуги!'
   );
-  const whatsappLink = `https://wa.me/77002175992?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/77478858220?text=${whatsappMessage}`;
 
   if (isMobile) {
     return (
@@ -46,7 +46,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
               lineHeight: '1.2'
             }}
           >
-            Качественная химчистка мягкой мебели в Алматы!
+            Профессиональная уборка в Алматы
           </h1>
           <p
             className="hero-description"
@@ -60,7 +60,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
               margin: '0 auto 20px auto'
             }}
           >
-            Вернём Вашей мебели магазинную чистоту
+            Доверьте чистоту профессионалам. Качественная уборка квартир, домов и офисов
           </p>
           <div style={{
             display: 'flex',
@@ -71,11 +71,9 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#333' }}>
               <FaGift color="#f47ac2" size={18}/>
-              <span>Дезинфекция в подарок</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#333' }}>
               <FaCheckCircle color="#a259c6" size={18} />
-              <span>Защита от пятен</span>
             </div>
           </div>
           <div style={{
@@ -98,31 +96,32 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
                 textDecoration: 'none',
                 fontSize: isSmallMobile ? '0.9rem' : '1rem',
                 fontWeight: 'bold',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
-                display: 'inline-block'
+                boxShadow: '0 4px 15px rgba(244,122,194,0.3)',
+                width: 'auto',
+                maxWidth: 'none'
               }}
             >
               Заказать химчистку
             </a>
-            <div style={{
-              background: 'rgba(0, 0, 0, 0.1)',
-              borderRadius: '12px',
-              padding: '10px 15px',
-              display: 'inline-block',
-              marginTop: '20px',
-              border: '1px solid rgba(0,0,0,0.05)'
+          </div>
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.1)',
+            borderRadius: '12px',
+            padding: '10px 15px',
+            display: 'inline-block',
+            marginTop: '20px',
+            border: '1px solid rgba(0,0,0,0.05)'
+          }}>
+            <p style={{
+              margin: 0,
+              color: 'yellow',
+              fontWeight: 'bold',
+              fontSize: isSmallMobile ? '1.8rem' : '2.0rem',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
             }}>
-              <p style={{
-                margin: 0,
-                color: 'yellow',
-                fontWeight: 'bold',
-                fontSize: isSmallMobile ? '1.8rem' : '2.0rem',
-                textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
-              }}>
-                <FaGift style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-                СКИДКА 20% НА ПЕРВЫЙ ЗАКАЗ
-              </p>
-            </div>
+              <FaGift style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+              СКИДКА 20% НА ПЕРВЫЙ ЗАКАЗ
+            </p>
           </div>
         </div>
       </section>
