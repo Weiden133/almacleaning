@@ -77,7 +77,7 @@ function App() {
   const sendToWhatsApp = () => {
     if (cart.length === 0) return;
     const message = `🌟 Заказ с сайта AlmaCleaning!\n\n${cart.map(item => `• ${item.title}`).join('\n')}\n\n📞 Пожалуйста, свяжитесь со мной для уточнения деталей заказа!`;
-    const whatsappUrl = `https://wa.me/77002175992?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/77478858220?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

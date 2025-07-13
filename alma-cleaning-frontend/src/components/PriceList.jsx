@@ -84,7 +84,7 @@ const PriceList = () => {
       `• ${item.name} x${item.quantity} = ${(item.price * item.quantity).toLocaleString()} ₸`
     ).join('\n')}\n\n💰 Общая сумма: ${getTotalPrice().toLocaleString()} ₸\n\n📞 Пожалуйста, свяжитесь со мной для уточнения деталей заказа!`;
 
-    const whatsappUrl = `https://wa.me/77002175992?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/77478858220?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

@@ -104,12 +104,16 @@ const Footer = () => {
               color: '#fff'
             }}>
               <FaPhone size={isMobile ? 18 : 20} style={{ color: '#f47ac2' }} />
-              <a href="tel:+77002175992" className="font-bold tracking-wide hover:text-pink-400 transition-colors" style={{ 
+              <a href="tel:+77478858220" className="font-bold tracking-wide hover:text-pink-400 transition-colors" style={{
                 fontSize: isMobile ? '0.9rem' : '1rem',
                 textDecoration: 'none',
-                color: 'inherit'
+                color: 'inherit',
+                background: 'linear-gradient(135deg, #f47ac2 0%, #a259c6 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
               }}>
-                +7 (700) 217-59-92
+                +7 747 885 8220
               </a>
             </div>
             <div style={{ 
@@ -162,7 +166,7 @@ const Footer = () => {
             >
               <FaInstagram size={isMobile ? 24 : 32} />
             </a>
-            <a href="https://wa.me/77002175992?text=Здравствуйте!%20меня%20интерисуют%20ваши%20услуги!" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/77478858220?text=Здравствуйте!%20меня%20интерисуют%20ваши%20услуги!" target="_blank" rel="noopener noreferrer"
                style={{ 
                  background: '#25D366',
                  borderRadius: '50%',

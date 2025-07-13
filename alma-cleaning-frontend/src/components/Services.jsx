@@ -76,7 +76,7 @@ const Services = ({
       return;
     }
     const message = `🌟 Заказ услуги: ${service.title}!\n\n${service.description}\n\n📞 Пожалуйста, свяжитесь со мной для уточнения деталей заказа!`;
-    const whatsappUrl = `https://wa.me/77002175992?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/77478858220?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

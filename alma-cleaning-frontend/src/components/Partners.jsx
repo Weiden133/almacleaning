@@ -51,7 +51,7 @@ const Partners = () => {
   const handlePartnershipClick = () => {
     // Открываем WhatsApp с предустановленным сообщением
     const message = "Здравствуйте! Я хочу стать вашим партнером. Давайте обсудим возможности сотрудничества.";
-    window.open(`https://wa.me/77002175992?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/77478858220?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

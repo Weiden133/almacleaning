@@ -2,6 +2,7 @@ package kz.almacleaning.alma.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Set;
 
@@ -30,6 +31,7 @@ public class Master {
     private Integer experience = 0;   // Опыт работы в годах
 
     // Многие-ко-многим: мастер может выполнять несколько типов услуг
+    @JsonIgnore // Исключаем из JSON сериализации чтобы избежать lazy loading ошибки
     @ManyToMany
     @JoinTable(
             name = "master_services",

@@ -17,7 +17,7 @@ const CornerWhatsApp = () => {
 
   return (
     <a
-      href="https://wa.me/77002175992"
+      href="https://wa.me/77478858220"
       target="_blank"
       rel="noopener noreferrer"
       style={{

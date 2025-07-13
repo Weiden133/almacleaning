@@ -307,3 +307,90 @@ chmod +x deploy.sh
 - Если не работает — проверьте логи и статус сервисов (см. инструкцию)
 
 Удачного деплоя! 
+
+**Выполните эти команды на сервере Ubuntu (не на Windows):**
+
+```bash
+# Подключитесь к серверу
+ssh ubuntu@ВАШ_IP_СЕРВЕРА
+
+# Проверьте статус backend
+sudo systemctl status alma-backend
+
+# Посмотрите логи backend
+sudo journalctl -u alma-backend -f --lines=50
+
+# Проверьте что backend процесс запущен
+ps aux | grep java
+
+# Проверьте порт 8080
+netstat -tlnp | grep 8080
+```
+
+**Наиболее вероятные причины проблемы:**
+
+1. **Backend не запустился** - проверьте логи
+2. **Проблема с базой данных** - проверьте подключение 
+3. **Порт 8080 занят** - убейте старые процессы
+
+**Если backend не работает, перезапустите его:**
+
+```bash
+# Остановите старый backend
+sudo systemctl stop alma-backend
+sudo pkill -f alma-0.0.1-SNAPSHOT.jar
+
+# Перезапустите
+sudo systemctl start alma-backend
+
+# Проверьте
+curl http://localhost:8080/api/masters
+```
+
+**Скажите мне результат этих команд и я помогу исправить проблему!** 
+
+## Сначала установим nginx правильно:
+
+```bash
+# Обновим пакеты
+sudo apt update
+
+# Установим nginx
+sudo apt install nginx -y
+
+# Проверим что nginx установлен
+nginx -v
+```
+
+## Создадим простую конфигурацию nginx:
+
+```bash
+<code_block_to_apply_changes_from>
+```
+
+## Проверим конфигурацию:
+
+```bash
+sudo nginx -t
+```
+
+## Если тест прошел успешно:
+
+```bash
+# Соберем frontend
+cd /home/ubuntu/almacleaning/alma-cleaning-frontend
+npm install
+npm run build
+
+# Запустим nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+# Проверим статус
+sudo systemctl status nginx
+
+# Проверим работу
+curl http://localhost
+```
+
+**Выполни эти команды по порядку и пришли результат каждой команды! Сейчас мы точно решим эту проблему.** 

@@ -91,7 +91,7 @@ const OrderProcess = () => {
           
           <div className="cta-buttons">
             <motion.a
-              href="https://wa.me/77002175992?text=Здравствуйте!%20меня%20интерисуют%20ваши%20услуги!"
+              href="https://wa.me/77478858220?text=Здравствуйте!%20меня%20интерисуют%20ваши%20услуги!"
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-cta-btn"
@@ -103,7 +103,7 @@ const OrderProcess = () => {
             </motion.a>
             
             <motion.a
-              href="tel:+77002175992"
+              href="tel:+77478858220"
               className="phone-cta-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

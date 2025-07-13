@@ -1,0 +1,1 @@
+ALTER TABLE master ADD COLUMN available BOOLEAN;

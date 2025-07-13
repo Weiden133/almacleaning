@@ -121,8 +121,8 @@ const Header = ({ cart = [], isMobile, onCartClick, onMenuClick }) => {
             >
               Контакты
             </a>
-            <a
-              href="tel:+77002175992"
+            <a 
+              href="tel:+77478858220"
               className="text-light font-semibold"
               style={{
                 background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
@@ -142,7 +142,7 @@ const Header = ({ cart = [], isMobile, onCartClick, onMenuClick }) => {
                 e.currentTarget.style.boxShadow = '0 4px 15px rgba(244, 122, 194, 0.2)';
               }}
             >
-              +7 (700) 217-59-92
+              +7 747 885 8220
             </a>
             <button onClick={onCartClick} style={{ position: 'relative', background: 'none', border: 'none', color: isScrolled ? '#333' : '#333' }}>
               <FaShoppingCart size={18} />
@@ -259,8 +259,8 @@ const Header = ({ cart = [], isMobile, onCartClick, onMenuClick }) => {
             >
               Контакты
             </a>
-            <a
-              href="tel:+77002175992"
+            <a 
+              href="tel:+77478858220"
               className="text-light font-semibold"
               style={{
                 background: 'linear-gradient(135deg, #f47ac2, #a259c6)',
@@ -273,7 +273,7 @@ const Header = ({ cart = [], isMobile, onCartClick, onMenuClick }) => {
                 marginTop: '8px'
               }}
             >
-              +7 (700) 217-59-92
+              +7 747 885 8220
             </a>
           </div>
         </div>

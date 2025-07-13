@@ -87,7 +87,7 @@ const About = () => {
         }}>
           <FaInstagram size={isMobile ? 30 : 40} />
         </a>
-        <a href="https://wa.me/77002175992" target="_blank" rel="noopener noreferrer" className="text-light" style={{ 
+        <a href="https://wa.me/77478858220" target="_blank" rel="noopener noreferrer" className="text-light" style={{ 
           fontSize: isMobile ? '30' : '40', 
           display: 'flex', 
           alignItems: 'center', 

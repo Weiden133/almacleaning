@@ -1,6 +1,5 @@
 import React from 'react';
 import logo2 from '../assets/logo2.png';
-import { FaCheckCircle, FaGift } from 'react-icons/fa';
 
 const HeroSection = ({ isMobile, isSmallMobile }) => {
   const whatsappMessage = encodeURIComponent(
@@ -69,20 +68,6 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
             marginBottom: '20px',
             flexWrap: 'wrap'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#333' }}>
-              <FaGift color="#f47ac2" size={18}/>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#333' }}>
-              <FaCheckCircle color="#a259c6" size={18} />
-            </div>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: isSmallMobile ? '10px' : '15px',
-            marginBottom: '20px',
-            flexWrap: 'wrap'
-          }}>
             <a
               className="hero-button"
               href={whatsappLink}
@@ -101,7 +86,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
                 maxWidth: 'none'
               }}
             >
-              Заказать химчистку
+              Заказать
             </a>
           </div>
           <div style={{
@@ -119,7 +104,6 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
               fontSize: isSmallMobile ? '1.8rem' : '2.0rem',
               textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
             }}>
-              <FaGift style={{ marginRight: '8px', verticalAlign: 'middle' }} />
               СКИДКА 20% НА ПЕРВЫЙ ЗАКАЗ
             </p>
           </div>
@@ -230,7 +214,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
                 maxWidth: 'none'
               }}
             >
-              Написать в WhatsApp
+              Заказать
             </a>
             <div style={{
                 marginTop: '20px',

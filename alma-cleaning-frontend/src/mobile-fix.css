@@ -1,0 +1,312 @@
+/* Мобильные исправления для AlmaCleaning */
+
+/* Основные мобильные стили */
+@media (max-width: 768px) {
+  /* Фон и общие стили */
+  body {
+    background: linear-gradient(135deg, #ffd1f7 0%, #f3e0ff 100%) !important;
+    color: #333 !important;
+    font-size: 16px !important;
+  }
+
+  /* Hero секция */
+  .hero-section {
+    background: linear-gradient(135deg, #ffd1f7 0%, #f3e0ff 100%) !important;
+    color: #333 !important;
+    padding: 20px 10px !important;
+    min-height: 60vh !important;
+  }
+
+  /* Заголовки */
+  h1, h2, h3, h4, h5, h6 {
+    color: #333 !important;
+  }
+
+  h1 {
+    font-size: 1.8em !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.3em !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Параграфы */
+  p {
+    font-size: 1em !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+  }
+
+  /* Секции */
+  .services-section, .masters-section, .about-section, .reviews-section,
+  .price-list-section, .advantages-section, .partners-section, .contact-form-section {
+    background: #ffffff !important;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.08) !important;
+    color: #333 !important;
+    border: 1px solid #e9ecef !important;
+    backdrop-filter: none !important;
+  }
+
+  .services-section h2, .masters-section h2, .reviews-section h2, .about-section h2,
+  .price-list-container h2, .advantages-container h2, .partners-container h2, .contact-form-container h2 {
+    color: #333 !important;
+    text-shadow: none !important;
+  }
+
+  /* Карточки услуг */
+  .service-card {
+    background: #ffffff !important;
+    color: #333 !important;
+    min-height: 240px !important;
+    padding: 16px 12px !important;
+  }
+
+  .service-title {
+    color: #333 !important;
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-description {
+    color: #555 !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Сетка услуг */
+  .services-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .services-section {
+    padding: 30px 10px !important;
+  }
+
+  /* Кнопки */
+  .button, .btn {
+    padding: 10px 20px !important;
+    font-size: 0.9em !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    min-height: 44px !important;
+  }
+
+  /* Навигация */
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: block !important;
+  }
+
+  /* Формы */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px !important;
+    padding: 12px 15px !important;
+  }
+
+  /* Модальные окна */
+  .modal-content {
+    width: 95% !important;
+    max-width: none !important;
+    margin: 10px !important;
+    padding: 20px 15px !important;
+  }
+
+  /* Корзина */
+  .cart-panel {
+    width: 95% !important;
+    max-width: none !important;
+  }
+
+  /* Touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Изображения */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Оптимизация производительности */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  html {
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Улучшение читаемости */
+  p, span, div {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+
+  /* Контрастность */
+  .text-light {
+    color: #333 !important;
+  }
+
+  /* Фокус */
+  .btn:focus, button:focus {
+    outline: 2px solid #f47ac2 !important;
+    outline-offset: 2px !important;
+  }
+
+  a:focus {
+    outline: 2px solid #f47ac2 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Увеличиваем размер иконок оборудования */
+  .equipment-grid .service-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .equipment-grid .service-icon {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .equipment-grid .service-icon img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 120px !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto 18px auto !important;
+  }
+
+  .equipment-grid .service-card h3,
+  .equipment-grid .service-card p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+    position: static !important;
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Стили для очень маленьких экранов */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px !important;
+  }
+
+  .hero-section {
+    padding: 15px 8px !important;
+    min-height: 50vh !important;
+  }
+
+  h1 {
+    font-size: 1.5em !important;
+  }
+
+  h2 {
+    font-size: 1.3em !important;
+  }
+
+  h3 {
+    font-size: 1.1em !important;
+  }
+
+  .button, .btn {
+    padding: 8px 16px !important;
+    font-size: 0.85em !important;
+    max-width: 260px !important;
+  }
+
+  .service-card {
+    min-height: 220px !important;
+    padding: 12px 10px !important;
+  }
+
+  .service-icon {
+    margin-bottom: 10px !important;
+    padding: 8px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .service-title {
+    font-size: 0.9rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-description {
+    font-size: 0.75rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-order-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .modal-content {
+    width: 98% !important;
+    margin: 5px !important;
+    padding: 15px 12px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px !important;
+    font-size: 16px !important;
+  }
+
+  /* Сетка услуг для очень маленьких экранов */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-card {
+    padding: 25px !important;
+  }
+
+  .service-title {
+    font-size: 1.5rem !important;
+  }
+
+  .service-description {
+    font-size: 1.1rem !important;
+  }
+
+  .service-order-btn {
+    padding: 14px 32px !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Исправления для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+} 
