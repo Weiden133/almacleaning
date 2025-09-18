@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { FaCouch, FaBuilding, FaHome } from 'react-icons/fa';
 import { GiTheaterCurtains } from 'react-icons/gi';
 import { MdCleaningServices, MdWindow } from 'react-icons/md';
+import AnimatedSection from './AnimatedSection';
+import AnimatedList from './AnimatedList';
 
 const Services = ({
   setCart,
@@ -71,6 +73,8 @@ const Services = ({
   ];
 
   const handleServiceOrder = (service) => {
+    // Отслеживаем клик по кнопке заказа
+    
     if (service.id === 'furniture-cleaning') {
       setShowFurnitureModal(true);
       return;
@@ -84,25 +88,31 @@ const Services = ({
   const isSmallMobile = window.innerWidth <= 480;
 
   return (
-    <section className="services-section" id="services-section" style={{ position: 'relative' }}>
+    <AnimatedSection animation="fadeIn" className="services-section" id="services-section" style={{ position: 'relative' }}>
       <div style={{ width: '100%' }}>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="font-bold tracking-tight"
-          style={{ 
-            fontSize: isSmallMobile ? '1.8rem' : isMobile ? '2rem' : '2.5rem', 
-            padding: isMobile ? '15px 0' : '20px 0',
-            marginBottom: isMobile ? '10px' : '20px'
-          }}
-        >
-          Наши услуги
-        </motion.h2>
-        <div 
+        <AnimatedSection animation="slideUp" delay={0.2}>
+          <h2
+            className="font-bold tracking-tight"
+            style={{ 
+              fontSize: isSmallMobile ? '1.8rem' : isMobile ? '2rem' : '2.5rem', 
+              padding: isMobile ? '15px 0' : '20px 0',
+              marginBottom: isMobile ? '10px' : '20px',
+              textAlign: 'center',
+              background: 'linear-gradient(135deg, #f47ac2, #a259c6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}
+          >
+            Наши услуги
+          </h2>
+        </AnimatedSection>
+        <AnimatedList 
           className="services-grid" 
           id="services-grid-panel" 
+          staggerDelay={0.1}
+          animation="slideUp"
           style={{ 
             flex: 1,
             display: 'grid',
@@ -224,9 +234,9 @@ const Services = ({
               </motion.button>
             </motion.div>
           ))}
-        </div>
+        </AnimatedList>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

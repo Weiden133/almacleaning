@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlmaCleaning - Профессиональная химчистка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd1f7 0%, #f3e0ff 100%);
+            color: #333;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .logo {
+            font-size: 3em;
+            color: #f47ac2;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .gif-container {
+            margin: 30px 0;
+        }
+        
+        .gif-container img {
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-left: 5px solid #f47ac2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            color: #f47ac2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: #f47ac2;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #e91e63;
+        }
+        
+        .contact-section {
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-section h3 {
+            color: #f47ac2;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            margin-top: 20px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2em;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">AlmaCleaning</div>
+            <div class="subtitle">Профессиональная химчистка и клининг в Алматы</div>
+        </div>
+        
+        <div class="hero-section">
+            <h2>Профессиональное оборудование Karcher</h2>
+            <div class="gif-container">
+                <img src="/images/gifs/0912.gif" alt="Karcher Professional Equipment" onerror="this.style.display='none'">
+            </div>
+            <p>Используем только профессиональное оборудование Karcher для достижения лучших результатов</p>
+        </div>
+        
+        <div class="services">
+            <div class="service-card">
+                <h3>Химчистка мебели</h3>
+                <p>Профессиональная химчистка диванов, кресел, стульев и другой мягкой мебели</p>
+                <div class="price">от 5000 KZT</div>
+                <a href="https://wa.me/77478858220?text=Хочу заказать химчистку мебели" class="btn">Заказать</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>Уборка квартир</h3>
+                <p>Генеральная, после ремонта, поддерживающая уборка квартир и домов</p>
+                <div class="price">от 3000 KZT</div>
+                <a href="https://wa.me/77478858220?text=Хочу заказать уборку квартиры" class="btn">Заказать</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>Химчистка ковров</h3>
+                <p>Глубокая химчистка ковров, ковролина и напольных покрытий</p>
+                <div class="price">от 2000 KZT</div>
+                <a href="https://wa.me/77478858220?text=Хочу заказать химчистку ковров" class="btn">Заказать</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>Мойка окон</h3>
+                <p>Мойка окон, витрин, фасадов зданий с использованием профессионального оборудования</p>
+                <div class="price">от 1500 KZT</div>
+                <a href="https://wa.me/77478858220?text=Хочу заказать мойку окон" class="btn">Заказать</a>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h3>Контакты</h3>
+            <div class="contact-info">📞 +7 (747) 885-82-20</div>
+            <div class="contact-info">💬 WhatsApp: 24/7</div>
+            <div class="contact-info">📍 Алматы и пригороды</div>
+            <a href="https://wa.me/77478858220" class="btn whatsapp-btn">Написать в WhatsApp</a>
+        </div>
+    </div>
+    
+    <script>
+        // Простая проверка загрузки
+        console.log('AlmaCleaning website loaded successfully!');
+        
+        // Проверяем загрузку изображения
+        const img = document.querySelector('img');
+        if (img) {
+            img.onload = function() {
+                console.log('Karcher GIF loaded successfully!');
+            };
+            img.onerror = function() {
+                console.log('Karcher GIF failed to load, but site still works');
+            };
+        }
+    </script>
+</body>
+</html>

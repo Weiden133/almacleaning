@@ -8,7 +8,7 @@ const equipment = [
     description: 'Используем оборудование Kärcher - мирового лидера в области профессиональной уборки и химчистки'
   },
   {
-    image: '/images/himiy/himiy.webp',
+    image: '/images/himiy/jimiyy.jpg',
     title: 'Сертифицированная химия',
     description: 'Только проверенные и безопасные моющие средства от ведущих европейских производителей'
   },

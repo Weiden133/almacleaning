@@ -1,5 +1,6 @@
 import React from 'react';
 import logo2 from '../assets/logo2.png';
+import KarcherExplosion from './KarcherExplosion';
 
 const HeroSection = ({ isMobile, isSmallMobile }) => {
   const whatsappMessage = encodeURIComponent(
@@ -89,24 +90,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
               Заказать
             </a>
           </div>
-          <div style={{
-            background: 'rgba(0, 0, 0, 0.1)',
-            borderRadius: '12px',
-            padding: '10px 15px',
-            display: 'inline-block',
-            marginTop: '20px',
-            border: '1px solid rgba(0,0,0,0.05)'
-          }}>
-            <p style={{
-              margin: 0,
-              color: 'yellow',
-              fontWeight: 'bold',
-              fontSize: isSmallMobile ? '1.8rem' : '2.0rem',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
-            }}>
-              СКИДКА 20% НА ПЕРВЫЙ ЗАКАЗ
-            </p>
-          </div>
+          <KarcherExplosion isMobile={isMobile} isSmallMobile={isSmallMobile} />
         </div>
       </section>
     );
@@ -216,25 +200,7 @@ const HeroSection = ({ isMobile, isSmallMobile }) => {
             >
               Заказать
             </a>
-            <div style={{
-                marginTop: '20px',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%)',
-                borderRadius: '16px',
-                padding: '12px 24px',
-                display: 'inline-block',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-            }}>
-                <p style={{
-                  margin: 0,
-                  color: 'yellow',
-                  fontWeight: 'bold',
-                  fontSize: '2.2em',
-                  textShadow: '1px 1px 3px rgba(0,0,0,0.3)'
-                }}>
-                  СКИДКА 20% НА ПЕРВЫЙ ЗАКАЗ
-                </p>
-            </div>
+            <KarcherExplosion isMobile={isMobile} isSmallMobile={isSmallMobile} />
           </div>
         </div>
       </div>

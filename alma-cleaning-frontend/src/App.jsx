@@ -28,18 +28,26 @@ function App() {
   const [showOfficeModal, setShowOfficeModal] = useState(false);
   const [showApartmentModal, setShowApartmentModal] = useState(false);
   const [showWindowFacadeModal, setShowWindowFacadeModal] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [isSmallMobile, setIsSmallMobile] = useState(window.innerWidth < 480);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      setIsMobile(width < 768);
-      setIsSmallMobile(width < 480);
+      if (typeof window !== 'undefined') {
+        const width = window.innerWidth;
+        setIsMobile(width < 768);
+        setIsSmallMobile(width < 480);
+      }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
+    // Инициализируем размеры при загрузке
+    handleResize();
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   const removeFromCart = (id) => setCart((prev) => prev.filter((item) => item.id !== id));

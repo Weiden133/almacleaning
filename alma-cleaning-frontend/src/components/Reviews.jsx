@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import AnimatedSection from './AnimatedSection';
+import './Reviews.css';
 
 // Импортируем изображения из папки assets
 import otziv1 from '../assets/otziv1.jpg';
@@ -55,10 +57,11 @@ const Reviews = () => {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 300 : -300,
+      x: direction > 0 ? 400 : -400,
       opacity: 0,
-      scale: 0.8,
-      rotateY: direction > 0 ? 45 : -45,
+      scale: 0.7,
+      rotateY: direction > 0 ? 30 : -30,
+      filter: "blur(10px)",
     }),
     center: {
       zIndex: 1,
@@ -66,13 +69,15 @@ const Reviews = () => {
       opacity: 1,
       scale: 1,
       rotateY: 0,
+      filter: "blur(0px)",
     },
     exit: (direction) => ({
       zIndex: 0,
-      x: direction < 0 ? 300 : -300,
+      x: direction < 0 ? 400 : -400,
       opacity: 0,
-      scale: 0.8,
-      rotateY: direction < 0 ? 45 : -45,
+      scale: 0.7,
+      rotateY: direction < 0 ? 30 : -30,
+      filter: "blur(10px)",
     }),
   };
 
@@ -82,48 +87,47 @@ const Reviews = () => {
   };
 
   return (
-    <section className="reviews-section" id="reviews-section">
-      <h2>Отзывы</h2>
+    <AnimatedSection animation="fadeIn" className="reviews-section" id="reviews-section">
+      <AnimatedSection animation="slideUp" delay={0.2}>
+        <h2>Отзывы</h2>
+      </AnimatedSection>
       <div className="slider-container" style={{ maxWidth: '500px', margin: '0 auto' }}>
         <div className="slider-wrapper">
-          <motion.div
-            key={currentSlide}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.4 },
-              scale: { duration: 0.4 },
-              rotateY: { duration: 0.6 }
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-              if (swipe < -swipeConfidenceThreshold) {
-                handleNext();
-              } else if (swipe > swipeConfidenceThreshold) {
-                handlePrev();
-              }
-            }}
-            className="slide-item"
-          >
-            <img
-              src={reviewScreenshots[currentSlide]}
-              alt={`Отзыв ${currentSlide + 1}`}
-              className="slide-image"
-              style={{
-                maxWidth: '100%',
-                height: 'auto',
-                borderRadius: '12px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentSlide}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 200, damping: 25 },
+                opacity: { duration: 0.8, ease: "easeInOut" },
+                scale: { duration: 0.8, ease: "easeInOut" },
+                rotateY: { duration: 0.8, ease: "easeInOut" },
+                filter: { duration: 0.6, ease: "easeInOut" }
               }}
-            />
-          </motion.div>
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
+                if (swipe < -swipeConfidenceThreshold) {
+                  handleNext();
+                } else if (swipe > swipeConfidenceThreshold) {
+                  handlePrev();
+                }
+              }}
+              className="slide-item"
+            >
+              <img
+                src={reviewScreenshots[currentSlide]}
+                alt={`Отзыв ${currentSlide + 1}`}
+                className="slide-image"
+              />
+            </motion.div>
+          </AnimatePresence>
 
           {/* Кнопки навигации */}
           <motion.button
@@ -166,7 +170,7 @@ const Reviews = () => {
           {currentSlide + 1} / {reviewScreenshots.length}
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

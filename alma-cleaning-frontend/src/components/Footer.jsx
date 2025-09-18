@@ -123,12 +123,12 @@ const Footer = () => {
               color: '#fff'
             }}>
               <FaPhone size={isMobile ? 18 : 20} style={{ color: '#f47ac2' }} />
-              <a href="tel:+77011234567" className="font-bold tracking-wide hover:text-pink-400 transition-colors" style={{ 
+              <a href="tel:+77712399770" className="font-bold tracking-wide hover:text-pink-400 transition-colors" style={{ 
                 fontSize: isMobile ? '0.9rem' : '1rem',
                 textDecoration: 'none',
                 color: 'inherit'
               }}>
-                +7 (701) 123-45-67
+                +7 771 239 9770
               </a>
             </div>
             <div style={{ 
@@ -139,49 +139,18 @@ const Footer = () => {
               marginTop: 5
             }}>
               <FaMapMarkerAlt size={isMobile ? 18 : 20} style={{ color: '#f47ac2' }} />
-              <span className="font-bold tracking-wide" style={{ 
+              <a href="https://2gis.kz/almaty/firm/70000001101327665" target="_blank" rel="noopener noreferrer" className="font-bold tracking-wide" style={{ 
                 fontSize: isMobile ? '0.9rem' : '1rem',
+                textDecoration: 'none',
+                color: 'inherit'
               }}>
                 Алматы, Казахстан
-              </span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Социальные сети */}
-        <div style={sectionStyle}>
-          <h4 className="font-semibold tracking-tight" style={{ color: '#fff', fontSize: isMobile ? '1.4rem' : '1.5rem', marginBottom: 20 }}>Мы в соцсетях</h4>
-          <div style={{ display: 'flex', flexDirection: isMobile ? 'row' : 'column', gap: 18, alignItems: 'center' }}>
-            <a href="https://www.instagram.com/almatacleaning/" target="_blank" rel="noopener noreferrer"
-               style={{ 
-                 background: 'linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7)',
-                 borderRadius: '50%',
-                 padding: isMobile ? '10px' : '14px',
-                 display: 'flex',
-                 alignItems: 'center',
-                 justifyContent: 'center',
-                 transition: 'transform 0.3s ease',
-                 color: 'white'
-               }}
-            >
-              <FaInstagram size={isMobile ? 24 : 32} />
-            </a>
-            <a href="https://wa.me/77478858220?text=Здравствуйте!%20меня%20интерисуют%20ваши%20услуги!" target="_blank" rel="noopener noreferrer"
-               style={{ 
-                 background: '#25D366',
-                 borderRadius: '50%',
-                 padding: isMobile ? '10px' : '14px',
-                 display: 'flex',
-                 alignItems: 'center',
-                 justifyContent: 'center',
-                 transition: 'transform 0.3s ease',
-                 color: 'white'
-               }}
-            >
-              <FaWhatsapp size={isMobile ? 24 : 32} />
-            </a>
-          </div>
-        </div>
+        {/* Социальные сети — скрыто по просьбе клиента */}
       </div>
 
       {/* Копирайт */}

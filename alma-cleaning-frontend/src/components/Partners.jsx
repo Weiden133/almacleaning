@@ -14,7 +14,7 @@ const partners = [
     id: 'teatralka',
     name: 'Театралка',
     logo: '/images/teatralka.png',
-    description: 'Театральный центр развлечений',
+    description: 'Рестобар',
     instagramUrl: 'https://www.instagram.com/teatralka.almaty/',
   },
   {
@@ -42,7 +42,7 @@ const partners = [
     id: 'ozyurt',
     name: 'Ozyurt',
     logo: '/images/oozyurt.jpg',
-    description: 'Строительная компания',
+    description: 'Сеть ресторанов турецкой кухни',
     instagramUrl: 'https://www.instagram.com/ozyurt.kz/',
   }
 ];

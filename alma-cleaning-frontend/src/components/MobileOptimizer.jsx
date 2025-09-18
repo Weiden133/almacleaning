@@ -108,8 +108,9 @@ const MobileOptimizer = ({ children }) => {
     <div 
       className={`mobile-optimizer ${isSmallMobile ? 'mobile-small' : isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop'}`}
       data-screen-size={isSmallMobile ? 'small-mobile' : isMobile ? 'mobile' : isTablet ? 'tablet' : 'desktop'}
+      style={{ position: 'relative', zIndex: 1 }}
     >
-      {React.cloneElement(children, { screenInfo })}
+      {children}
     </div>
   );
 };

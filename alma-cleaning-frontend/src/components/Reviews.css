@@ -1,0 +1,235 @@
+/* Стили для секции отзывов */
+.reviews-section {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(244, 122, 194, 0.05) 0%, rgba(162, 89, 198, 0.05) 100%);
+  pointer-events: none;
+}
+
+.reviews-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер слайдера */
+.slider-container {
+  position: relative;
+  z-index: 2;
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Слайд */
+.slide-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.slide-item:active {
+  cursor: grabbing;
+}
+
+.slide-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.slide-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопки навигации */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(244, 122, 194, 0.9);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(244, 122, 194, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(244, 122, 194, 1);
+  box-shadow: 0 6px 20px rgba(244, 122, 194, 0.4);
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+/* Индикаторы */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  z-index: 2;
+  position: relative;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dot.active {
+  background: #f47ac2;
+  box-shadow: 0 4px 12px rgba(244, 122, 194, 0.4);
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: rgba(244, 122, 194, 0.7);
+  transform: scale(1.1);
+}
+
+/* Счетчик слайдов */
+.slide-counter {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 30px 15px;
+    margin: 15px 0;
+  }
+  
+  .reviews-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .slider-wrapper {
+    height: 300px;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .prev-button {
+    left: 10px;
+  }
+  
+  .next-button {
+    right: 10px;
+  }
+  
+  .slider-dots {
+    gap: 8px;
+    margin-top: 20px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 20px 10px;
+  }
+  
+  .reviews-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .slider-wrapper {
+    height: 250px;
+  }
+  
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .prev-button {
+    left: 5px;
+  }
+  
+  .next-button {
+    right: 5px;
+  }
+  
+  .slide-counter {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}

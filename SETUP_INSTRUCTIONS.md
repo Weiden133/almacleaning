@@ -1,127 +1,34 @@
-# Инструкция по настройке и запуску AlmaCleaning
+# Настройка AlmaCleaning (Frontend-only)
 
-## Предварительные требования
+Требования:
+- Node.js 18+
+- npm 9+
 
-- Java 17 или выше
-- Node.js 18 или выше
-- Docker и Docker Compose
-- Maven (или используйте mvnw)
-
-## 1. Запуск базы данных
-
+## 1. Установка и запуск
 ```bash
-# Запуск PostgreSQL через Docker Compose
-docker-compose up -d
-
-# Проверка, что контейнер запущен
-docker ps
-```
-
-## 2. Запуск Backend
-
-```bash
-# Сборка проекта
-./mvnw clean package -DskipTests
-
-# Запуск приложения
-./mvnw spring-boot:run
-```
-
-Или запустите JAR файл:
-```bash
-java -jar target/alma-0.0.1-SNAPSHOT.jar
-```
-
-Backend будет доступен по адресу: http://localhost:8081
-
-## 3. Запуск Frontend
-
-```bash
-# Переход в папку frontend
 cd alma-cleaning-frontend
-
-# Установка зависимостей
 npm install
-
-# Запуск в режиме разработки
 npm run dev
 ```
+Приложение: http://localhost:5173
 
-Или сборка для продакшена:
+## 2. Сборка
 ```bash
 npm run build
 ```
+Артефакты: `alma-cleaning-frontend/dist`
 
-Frontend будет доступен по адресу: http://localhost:5173
+## 3. Что удалено/не используется
+- Backend (Spring Boot), Maven, Docker, PostgreSQL
+- Миграции, compose, любые API эндпоинты
 
-## 4. Проверка работы
+## 4. Конфигурация
+- `alma-cleaning-frontend/vite.config.js` — dev host/port
+- `alma-cleaning-frontend/index.html` — шрифты, мета-теги
 
-### Backend API endpoints:
-- `GET /api/masters` - список мастеров
-- `GET /api/services` - список услуг
-- `GET /api/orders` - список заказов
-- `POST /api/orders` - создание заказа
+## 5. Частые проблемы
+- Порт занят: смените порт в `vite.config.js` → `server.port`
+- Кэш npm: `npm cache clean --force && rm -rf node_modules package-lock.json && npm install`
 
-### База данных:
-- PostgreSQL доступна на порту 5435
-- База данных: `alma_postgres-1`
-- Пользователь: `postgres`
-- Пароль: `1337`
-
-## 5. Структура проекта
-
-```
-alma/
-├── src/main/java/kz/almacleaning/alma/
-│   ├── controller/     # REST контроллеры
-│   ├── service/        # Бизнес-логика
-│   ├── repository/     # Доступ к данным
-│   ├── model/          # Модели данных
-│   └── config/         # Конфигурации
-├── src/main/resources/
-│   ├── db/migration/   # Миграции Flyway
-│   └── application.yml # Конфигурация приложения
-├── alma-cleaning-frontend/ # React приложение
-└── docker-compose.yml  # Конфигурация Docker
-```
-
-## 6. Исправленные проблемы
-
-✅ Добавлена зависимость Flyway
-✅ Исправлен порядок CSS импортов
-✅ Исправлена миграция V1
-✅ Добавлена валидация в контроллеры
-✅ Настроен CORS
-✅ Улучшена обработка ошибок
-✅ Обновлены тестовые данные
-
-## 7. Возможные проблемы и решения
-
-### Проблема: Порт 8081 занят
-```bash
-# Найти процесс
-netstat -ano | findstr :8081
-# Завершить процесс
-taskkill /PID <PID> /F
-```
-
-### Проблема: База данных не подключается
-```bash
-# Проверить статус контейнера
-docker ps
-# Перезапустить контейнер
-docker-compose restart
-```
-
-### Проблема: Frontend не собирается
-```bash
-# Очистить кэш
-npm cache clean --force
-# Удалить node_modules и переустановить
-rm -rf node_modules package-lock.json
-npm install
-```
-
-## 8. Развертывание на продакшен
-
-См. файл `DEPLOY_INSTRUCTIONS.md` для подробных инструкций по развертыванию на сервер. 
+## 6. Деплой
+Смотрите `DEPLOY_INSTRUCTIONS.md`. 

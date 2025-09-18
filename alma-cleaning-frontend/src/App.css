@@ -29,10 +29,10 @@ body {
   padding: 0;
   width: 100%;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background: url('/fon.png') center/cover no-repeat fixed !important;
+  background: linear-gradient(135deg, #ffd1f7 0%, #f3e0ff 100%) !important;
   background-color: #fff;
   animation: gradientShift 12s ease infinite;
-  color: #ffffff;
+  color: #333333;
   min-height: 100vh;
   font-size: 18px;
   overflow-x: hidden;
@@ -47,15 +47,16 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: visible;
+  z-index: 1;
 }
 
 /* Улучшенные медиа-запросы для мобильной оптимизации */
 @media (max-width: 768px) {
   body {
     font-size: 16px;
-    background: #f8f9fa; /* Light gray background for mobile */
+    background: linear-gradient(135deg, #ffd1f7 0%, #f3e0ff 100%) !important; /* Keep gradient on mobile */
     color: #333; /* Dark text color for mobile */
-    animation: none;
+    animation: gradientShift 12s ease infinite;
   }
 
   .services-section, .masters-section, .about-section, .reviews-section,
@@ -482,6 +483,8 @@ body {
   width: 100%;
   position: relative;
   overflow-x: hidden;
+  background: transparent;
+  z-index: 1;
 }
 
 main {
@@ -1533,7 +1536,7 @@ select option:checked, select option:focus, select option:hover {
 }
 
 /* Import Montserrat font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+/* removed @import moved to index.html */
 
 /* Reset default styles */
 * {
@@ -1552,13 +1555,7 @@ select option:checked, select option:focus, select option:hover {
   --background-dark: #1a1a1a;
 }
 
-body {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color);
-  line-height: 1.6;
-}
+/* body styles consolidated above to avoid conflicts */
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
